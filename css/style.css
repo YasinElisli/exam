@@ -1,0 +1,85 @@
+*{
+  margin: 0 auto;
+}
+
+body{
+  overflow-y: scroll !important;
+}
+
+/*sidebar*/
+.sidebar{
+  position: fixed;
+  right: 0;
+  height: 100vh;
+  width: 13%;
+  background: white;
+  z-index: 1000;
+  box-shadow: -3px 0px 5px 0 rgba(0, 0, 0, 0.16);
+
+}
+
+.answerDiscription{
+  padding: 20px 0px 20px 20px;
+  font-weight: bold;
+}
+.answerList ol{
+  padding-right: 20px;
+}
+.answerList li{
+    border-bottom: 1px solid rgba(94, 94, 94, 0.3);;
+}
+
+
+/*sidebar end*/
+
+
+
+/*main content*/
+.mainContent{
+  margin-top: 25px;
+}
+/*main content end*/
+
+
+/*code academy logo*/
+.codeLogo{
+  height: auto;
+  width: auto;
+}
+
+.brand-logo img{
+  transform: translateY(25%);
+}
+/*code academy logo end*/
+
+
+/*submit button*/
+.submitDiv{
+  text-align: center;
+}
+.submitDiv button{
+  width: 200px;
+  height: 50px;
+}
+/*submit button end*/
+
+
+/*question card*/
+.card-image img{
+  height: 200px;
+}
+.card-action img{
+  height: 150px;
+}
+/*question card end*/
+
+
+/*modal*/
+.modal-trigger{
+  margin-right: 0 !important;
+}
+.modal-content{
+  color: black;
+
+}
+/*modal end*/
