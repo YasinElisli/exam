@@ -1,3 +1,4 @@
+<?php include 'db.php'; ?>
 <!DOCTYPE html>
 <html>
 
@@ -21,45 +22,7 @@
 
     <div class="sidebar hoverable">
 
-      <div class="answerDiscription">
-
-      <p> Doğru = 0 </p>
-      <p> Yanlış = 0</p>
-      <p> Cavablandırılmamış = 25 </p>
-
-      </div>
-
-      <div class="answerList">
-
-      <ol>
-        <li>A</li>
-        <li>B</li>
-        <li>C</li>
-        <li>D</li>
-        <li>C</li>
-        <li>B</li>
-        <li>A</li>
-        <li>C</li>
-        <li>B</li>
-        <li>A</li>
-        <li>A</li>
-        <li>B</li>
-        <li>C</li>
-        <li>D</li>
-        <li>C</li>
-        <li>B</li>
-        <li>A</li>
-        <li>C</li>
-        <li>B</li>
-        <li>A</li>
-        <li>B</li>
-        <li>A</li>
-        <li>C</li>
-        <li>B</li>
-        <li>A</li>
-      </ol>
-
-  </div>
+    netice
 
     </div>
 
@@ -94,15 +57,15 @@
 
                   <form class="" action="" method="post">
 
-                    <input id="nameSurnameInput" type="text" placeholder="Adınız və soyadınız" class="validate">
-
+                    <input id="nameSurnameInput" type="text" placeholder="Adınız" class="validate">
+                    <input id="nameSurnameInput" type="text" placeholder="Soyadınız" class="validate">
                     <input id="phoneNumber" type="text" placeholder="Telefon nömrəniz" class="validate">
 
                   </form>
 
                 </div>
                 <div class="modal-footer">
-                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Təsdiqlə</a>
+                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Nəticə</a>
                 </div>
               </div>
 
@@ -129,105 +92,49 @@
     <div class="mainContent">
 
       <div class="container">
+        <?php
+        $connection = mysqli_select_db($db_connection,$dbname);
+        $query=mysqli_query($db_connection,"SELECT * FROM question");
+
+        while ($row = mysqli_fetch_assoc($query)) {
+          $qId = $row['id'];
+          $question = $row['question'];
+          $qImg = $row['question_img'];
+          $queryAnswer=mysqli_query($db_connection,"SELECT * FROM answer WHERE question_id = '$qId'");
+          echo '<div class="row">
+            <div class="col s12 m12">
+              <div class="hoverable card">
+                <div class="card-image">
+                '.$qId.'. '.$question.'
+                  <img src="'.$qImg.'" alt="" />
 
 
+                </div>
+                <div class="card-content">
 
-        <div class="row">
-          <div class="col s12 m12">
-            <div class="hoverable card">
-              <div class="card-image">
-                <img src="img/mechul.jpg" alt="" />
 
-              </div>
-              <div class="card-content">
-                <p class="col m6">1. Aşağakılardan hansı cavabdır?</p>
-
-              </div>
-              <div class="card-action">
-
-                <form action="#">
+                </div>
+                <div class="card-action">
+                <form action="#">';
+                while ($row2 = mysqli_fetch_assoc($queryAnswer)) {
+                  echo '
 
                   <p>
-                    <input name="group1" type="radio" id="test1" />
-                    <label for="test1">A) </label>
-                    <span>Cavab budur</span>
-
+                    <input name="variant" type="radio" id="test'.$row2['id'].'" />
+                    <label for="test'.$row2['id'].'">'.$row2['variant'].')'.'</label>
+                    <span>'.$row2['answer_content'].'</span>
                   </p>
-                  <p>
-                    <input name="group1" type="radio" id="test2" />
-                    <label for="test2">B) </label>
-                    <span>Yox budur</span>
+                  ';
 
-                  </p>
-                  <p>
-                    <input name="group1" type="radio" id="test3" />
-                    <label for="test3">C) </label>
-                    <span>Ə budur</span>
-
-                  </p>
-                  <p>
-                    <input name="group1" type="radio" id="test4" />
-                    <label for="test4">D) </label>
-                    <span>Yoxe yox budur</span>
-
-                  </p>
-
+                }
+                echo '
                 </form>
-
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-
-
-        <div class="row">
-          <div class="col s12 m12">
-            <div class="hoverable card">
-              <div class="card-image">
-                <img src="img/mechul.jpg" alt="" />
-
-              </div>
-              <div class="card-content">
-                <p class="col m6">1. Aşağakılardan hansı cavabdır?</p>
-
-              </div>
-              <div class="card-action">
-
-                <form action="#">
-
-                  <p>
-                    <input name="group1" type="radio" id="test5" />
-                    <label for="test5">A) </label>
-                    <span>Cavab budur</span>
-
-                  </p>
-                  <p>
-                    <input name="group1" type="radio" id="test6" />
-                    <label for="test6">B) </label>
-                    <span>Yox budur</span>
-
-                  </p>
-                  <p>
-                    <input name="group1" type="radio" id="test7" />
-                    <label for="test7">C) </label>
-                    <span>Ə budur</span>
-
-                  </p>
-                  <p>
-                    <input name="group1" type="radio" id="test8" />
-                    <label for="test8">D) </label>
-                    <span>Yoxe yox budur</span>
-
-                  </p>
-
-                </form>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-
+          </div>';
+        }
+         ?>
       </div>
 
 
@@ -238,7 +145,7 @@
 
     <div class="submitDiv">
 
-      <button onclick="showAnswers()" class="submitButton z-depth-1 col m5 red btn waves-effect waves-light" type="submit" name="action">Təsdiqlə
+      <button onclick="showAnswers()" class="submitButton z-depth-1 col m5 red btn waves-effect waves-light" type="submit" name="action">Nəticə
         <i class="material-icons right">send</i>
       </button>
 
