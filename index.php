@@ -39,6 +39,7 @@
                 <img src="img/logo.png" alt="" class="" />
 
               </a>
+
             </div>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
 
@@ -46,7 +47,7 @@
 
 
               <!-- Modal Trigger -->
-              <a class="modal-trigger waves-effect waves-light btn" href="#modal1">Qeydiyyat</a>
+              <!-- <a class="modal-trigger waves-effect waves-light btn" href="#modal1">Qeydiyyat</a> -->
 
               <!-- Modal Structure -->
               <div id="modal1" class="modal">
@@ -55,18 +56,18 @@
 
 
 
-                  <form class="" action="" method="post">
+                  <form class="" action="index.php" method="get">
 
-                    <input id="nameSurnameInput" type="text" placeholder="Adınız" class="validate">
-                    <input id="nameSurnameInput" type="text" placeholder="Soyadınız" class="validate">
-                    <input id="phoneNumber" type="text" placeholder="Telefon nömrəniz" class="validate">
-
+                    <input name="ad" id="nameSurnameInput" type="text" placeholder="Adınız" class="validate">
+                    <input name="soyad" id="nameSurnameInput" type="text" placeholder="Soyadınız" class="validate">
+                    <input name="tel" id="phoneNumber" type="text" placeholder="Telefon nömrəniz" class="validate">
+                    <div class="modal-footer">
+                      <input type="submit" class="modal-action modal-close waves-effect waves-green btn-flat " value="Təsdiqlə">
+                    </div>
                   </form>
 
                 </div>
-                <div class="modal-footer">
-                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Nəticə</a>
-                </div>
+
               </div>
 
 
@@ -76,13 +77,11 @@
             </ul>
           </div>
         </div>
+
       </nav>
 
       <script type="text/javascript">
-        $(document).ready(function() {
-          // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-          $('.modal-trigger').leanModal();
-        });
+        $('#modal1').openModal();
       </script>
 
     </div>
@@ -90,28 +89,26 @@
     <!-- header -->
 
     <div class="mainContent">
-
       <div class="container">
         <?php
         $connection = mysqli_select_db($db_connection,$dbname);
         $query=mysqli_query($db_connection,"SELECT * FROM question");
 
         while ($row = mysqli_fetch_assoc($query)) {
+          $checkImg = "none";
           $qId = $row['id'];
           $question = $row['question'];
           $qImg = $row['question_img'];
+          if (!empty($qImg)) {$checkImg = "inherit";}
           $queryAnswer=mysqli_query($db_connection,"SELECT * FROM answer WHERE question_id = '$qId'");
           echo '<div class="row">
             <div class="col s12 m12">
               <div class="hoverable card">
-                <div class="card-image">
-                '.$qId.'. '.$question.'
-                  <img src="'.$qImg.'" alt="" />
-
-
+                <div class="card-image"><span class="question">
+                '.$qId.'. '.$question.'</span>
+                  <img src="'.$qImg.'" alt="" style="display:'.$checkImg.'" />
                 </div>
                 <div class="card-content">
-
 
                 </div>
                 <div class="card-action">
