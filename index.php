@@ -3,14 +3,15 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>Test</title>
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="css/materialize.css" media="screen" title="no title" charset="utf-8">
-  <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
 
-  <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
-  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <!-- source links -->
+
+    <?php
+      include 'view/links.php';
+    ?>
+
+  <!-- source links end -->
+
 
 </head>
 
@@ -29,29 +30,12 @@
 
 
     <!-- header -->
-    <div class="header">
-      <nav>
-        <div class="teal nav-wrapper">
-          <div class="container">
-            <div class="codeLogo ">
-              <a href="" class="brand-logo">
 
-                <img src="img/logo.png" alt="" class="" />
+    <?php
+      include 'view/header.php';
+    ?>
 
-              </a>
-
-            </div>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-
-
-            </ul>
-          </div>
-        </div>
-
-      </nav>
-    </div>
-
-    <!-- header -->
+    <!-- header end -->
 
     <div class="mainContent">
       <div class="container">
@@ -97,11 +81,6 @@
           </div>';
         }
          ?>
-      </div>
-
-
-
-    </div>
 
 
 
@@ -138,43 +117,27 @@
 
 
 
+      </div>
     </div>
+  </div>
+
+
+<!-- footer -->
+
+<?php
+
+  include 'view/footer.php';
+
+ ?>
+
+<!-- footer end -->
 
 
 
-
-
-
-  <div class="footer">
-
-    <footer class="teal page-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Qəbul testi</h5>
-            <p class="grey-text text-lighten-4">Bu testin nəticəsi sizin Code Academy-yə qəbul olub olmamağınızı təyin edəcək.</p>
-          </div>
-          <div class="contributors col l4 offset-l2 s12">
-            <h5 class="white-text">Hazırladı:</h5>
-            <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">back-end | Yasin Əlişli</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">front-end | Orxan Fərmanlı</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="container">
-          © 2016 Copyright Code Academy
-        </div>
-      </div>
-    </footer>
 
   </div>
-</div>
 
-
-  <!-- whole container -->
+<!-- whole container end -->
 
 
 </body>
