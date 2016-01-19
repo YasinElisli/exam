@@ -1,0 +1,23 @@
+
+.inputContent{
+  height: auto;
+  position: relative;
+}
+
+.inputBox{
+  padding: 50px;
+  height: auto;
+  text-align: center;
+
+}
+.inputBox button{
+  margin-top: 20px;
+  width: 200px;
+  height: 50px;
+  font-size: 17px;
+}
+.enteranceHead{
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
