@@ -43,47 +43,12 @@
             </div>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
 
-              <!-- <li> -->
-
-
-              <!-- Modal Trigger -->
-              <!-- <a class="modal-trigger waves-effect waves-light btn" href="#modal1">Qeydiyyat</a> -->
-
-              <!-- Modal Structure -->
-              <div id="modal1" class="modal">
-                <div class="modal-content">
-                  <h4>Qeydiyyat</h4>
-
-
-
-                  <form class="" action="index.php" method="get">
-
-                    <input name="ad" id="nameSurnameInput" type="text" placeholder="Adınız" class="validate">
-                    <input name="soyad" id="nameSurnameInput" type="text" placeholder="Soyadınız" class="validate">
-                    <input name="tel" id="phoneNumber" type="text" placeholder="Telefon nömrəniz" class="validate">
-                    <div class="modal-footer">
-                      <input type="submit" class="modal-action modal-close waves-effect waves-green btn-flat " value="Təsdiqlə">
-                    </div>
-                  </form>
-
-                </div>
-
-              </div>
-
-
-
-              <!-- </li> -->
 
             </ul>
           </div>
         </div>
 
       </nav>
-
-      <script type="text/javascript">
-        $('#modal1').openModal();
-      </script>
-
     </div>
 
     <!-- header -->
