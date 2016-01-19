@@ -55,6 +55,7 @@
 
     <div class="mainContent">
       <div class="container">
+        <form action="results.php" method="post">
         <?php
         $connection = mysqli_select_db($db_connection,$dbname);
         $query=mysqli_query($db_connection,"SELECT * FROM question");
@@ -77,12 +78,12 @@
 
                 </div>
                 <div class="card-action">
-                <form action="#">';
+                ';
                 while ($row2 = mysqli_fetch_assoc($queryAnswer)) {
                   echo '
 
                   <p>
-                    <input name="variant" type="radio" id="test'.$row2['id'].'" />
+                    <input name="'.$qId.'" type="radio" id="test'.$row2['id'].'" value="'.$row2['variant'].'" />
                     <label for="test'.$row2['id'].'">'.$row2['variant'].')'.'</label>
                     <span>'.$row2['answer_content'].'</span>
                   </p>
@@ -90,7 +91,7 @@
 
                 }
                 echo '
-                </form>
+
                 </div>
               </div>
             </div>
@@ -110,7 +111,7 @@
       <button onclick="showAnswers()" class="submitButton z-depth-1 col m5 red btn waves-effect waves-light" type="submit" name="action">Nəticə
         <i class="material-icons right">send</i>
       </button>
-
+      </form>
       <script type="text/javascript">
         var sidebar = document.getElementsByClassName('sidebar')[0];
         sidebar.style.transform = 'translateX(105%)';
