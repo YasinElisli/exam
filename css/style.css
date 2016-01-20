@@ -1,12 +1,14 @@
 *{
   margin: 0 auto;
+  
 }
 
 html{
   height: 100%;
 }
+
 body{
-  overflow-y: scroll !important;
+
   height:100%;
 
 }
@@ -39,16 +41,13 @@ body{
 .container-fluid{
   min-height:100%;
   position:relative;
+
 }
 
 /*main content*/
 .mainContent{
-  /*margin: 50px 0 30px 0;*/
-  position: relative;
-  bottom: 220px;
-  margin-top: 270px;
-
-}
+  margin: 50px 0 30px 0;
+  }
 /*main content end*/
 
 
@@ -74,10 +73,10 @@ body{
 }
 /*submit button end*/
 
-
 /*question card*/
 .card-image img{
   height: 200px;
+
 }
 .card-action img{
   height: 150px;
@@ -87,7 +86,4 @@ body{
 
 .footer{
   width: 100%;
-  position: absolute;
-  bottom: 0;
-
 }

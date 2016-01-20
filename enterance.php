@@ -32,19 +32,18 @@
       <!-- main content div -->
 
       <div class="inputContent">
+        
         <div class="container">
 
-        <div class="enteranceHead">
+          <div class="enteranceHead">
 
 
-          <h3>Xoş Gəlmisiniz!</h3>
+            <h3>Xoş Gəlmisiniz!</h3>
 
-        </div>
+          </div>
 
 
           <div class="inputBox card hoverable">
-
-
             <div class="row">
               <form class="col s12">
                 <div class="row">
@@ -68,27 +67,31 @@
                 <button class="red btn waves-effect waves-light" type="submit" name="action">Təsdiqlə
                   <i class="material-icons right">send</i>
                 </button>
-
               </form>
             </div>
           </div>
+
+
+
         </div>
       </div>
 
       <!-- main content div end -->
 
-      <!-- footer -->
 
-      <?php
+        <div class="teal enteranceFooter">
 
-      include 'view/footer.php';
+          <div class="container">
+            <span>© 2016 Copyright Code Academy</span>
+          </div>
 
-     ?>
 
-        <!-- footer end -->
+        </div>
+
 
   </div>
   <!-- whole container -->
+
 
 </body>
 
