@@ -1,6 +1,6 @@
 *{
   margin: 0 auto;
-  
+
 }
 
 html{
@@ -86,4 +86,11 @@ body{
 
 .footer{
   width: 100%;
+}
+/*Results*/
+.result td{
+  padding: 0;
+}
+.result{
+  max-width: 200px;
 }
