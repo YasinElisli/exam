@@ -1,7 +1,9 @@
-
 .inputContent{
   height: auto;
   position: relative;
+  position:relative;
+  padding-bottom: 50px;
+
 }
 
 .inputBox{
@@ -20,4 +22,14 @@
   width: 100%;
   height: auto;
   text-align: center;
+  color: #404040;
+}
+
+.enteranceFooter{
+  height: 50px;
+  width: 100%;
+  color: white;
+  line-height: 50px;
+  position: absolute;
+  bottom: 0;
 }
