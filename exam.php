@@ -103,10 +103,6 @@
                   </button>
                   </form>
 
-
-
-
-
                   </div>';
           }
 
@@ -143,12 +139,13 @@
 <!-- whole container end -->
 
 <script type="text/javascript">
+
   var sidebar = document.getElementsByClassName('sidebar')[0];
-  sidebar.style.transform = 'translateX(105%)';
+  sidebar.style.transform = 'translateX(-105%)';
 
   function showAnswers() {
 
-    if (sidebar.style.transform == 'translateX(105%)') {
+    if (sidebar.style.transform == 'translateX(-105%)') {
       sidebar.style.transition = '0.5s all ease';
 
       sidebar.style.transform = 'translateX(0%)';
@@ -156,7 +153,7 @@
     } else {
       console.log(sidebar.style.transform)
 
-      sidebar.style.transform = 'translateX(105%)';
+      sidebar.style.transform = 'translateX(-105%)';
       console.log(sidebar.style.transform)
 
 
