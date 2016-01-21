@@ -21,9 +21,30 @@
 
   <div class="container-fluid">
 
-    <div class="sidebar hoverable">
+    <div class="valign-wrapper card sidebar">
 
-    netice
+      <ol>
+
+      <script type="text/javascript">
+
+        for (var i = 1; i <= 25; i++) {
+          document.write("<b><a class='navigationNumber' href='#"+i+"'><li></li></a></b>")
+        }
+
+        $('a').click(function(){
+            $('html, body').animate({
+                scrollTop: $( $.attr(this, 'href') ).offset().top
+            }, 700);
+            return false;
+        });
+
+      </script>
+
+      </ol>
+
+      <div class="navNextButton">
+        <!-- <img src="img/arrow-left.png" alt="" /> -->
+      </div>
 
     </div>
 
@@ -72,7 +93,7 @@
               $queryAnswer=mysqli_query($db_connection,"SELECT * FROM answer WHERE question_id = '$qId'");
               echo '<div class="row">
                 <div class="col s12 m12">
-                  <div class="hoverable card">
+                  <div class="hoverable card"  id="'.$qId.'">
                     <div class="card-image">
                       <img class="responsive-img" src="'.$qImg.'" alt="" style="display:'.$checkImg.'" />
                     </div>
@@ -102,7 +123,7 @@
             }
             echo '    <div class="submitDiv">
 
-                  <button onclick="showAnswers()" class="submitButton z-depth-1 col m5 red btn waves-effect waves-light" type="submit" name="action">Nəticə
+                  <button class="submitButton z-depth-1 col m5 red btn waves-effect waves-light" type="submit" name="action">Nəticə
                     <i class="material-icons right">send</i>
                   </button>
                   </form>
@@ -145,7 +166,7 @@
 <script type="text/javascript">
 
   var sidebar = document.getElementsByClassName('sidebar')[0];
-  sidebar.style.transform = 'translateX(-105%)';
+  sidebar.style.transform = 'translateX(0%)';
 
   function showAnswers() {
 
