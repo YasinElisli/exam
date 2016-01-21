@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Results</title>
-    <?php include 'view/links.php'; ?>
 
-  </head>
-  <body>
-		<?php
+<head>
+
+  <title>Nəticə</title>
+  <?php include 'view/links.php'; ?>
+
+</head>
+
+<body>
+
+  <div class="container-fluid">
+
+
+    <?php
     include 'db.php';
     include 'view/header.php';
+?>
+
+
+      <div class="resultContent">
+
+        <div class="container">
+
+          <div class="resultTable card large hoverable">
+
+            <?php
     session_start();
     $connection = mysqli_select_db($db_connection,$dbname);
     $query=mysqli_query($db_connection,"SELECT * FROM question");
@@ -52,7 +66,7 @@
           $_POST["$qID"] = null;
           $stdnAnswers[] = $_POST["$qID"];
         }
-        echo " ".$truFalse."</td></tr>";
+        echo " ".$truFalse. " " .$trueAns."</td></tr>";
       }
       echo "</table>";
           echo '<br />'."Netice : ".$result." bal".'<br />';
@@ -72,11 +86,21 @@
     }
 
 
+?>
+          </div>
 
-include 'view/footer.php';
-		?>
+        </div>
+      </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  </body>
+      <div class="teal enteranceFooter">
+
+        <div class="container">
+          <span>© 2016 Copyright Code Academy</span>
+        </div>
+
+      </div>
+  </div>
+
+</body>
+
 </html>

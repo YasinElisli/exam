@@ -1,5 +1,6 @@
 <meta charset="utf-8">
-<title>Test</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="css/materialize.css" media="screen" title="no title" charset="utf-8">
 <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
