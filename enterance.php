@@ -32,7 +32,7 @@
       <!-- main content div -->
 
       <div class="inputContent">
-        
+
         <div class="container">
 
           <div class="enteranceHead">
@@ -81,7 +81,7 @@
 
         <div class="teal enteranceFooter">
 
-          <div class="container">
+          <div class="grey-text text-lighten-3 container">
             <span>© 2016 Copyright Code Academy</span>
           </div>
 

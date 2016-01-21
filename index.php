@@ -53,12 +53,12 @@
           echo '<div class="row">
             <div class="col s12 m12">
               <div class="hoverable card">
-                <div class="card-image"><span class="question">
-                '.$qId.'. '.$question.'</span>
-                  <img src="'.$qImg.'" alt="" style="display:'.$checkImg.'" />
+                <div class="card-image">
+                  <img class="responsive-img" src="'.$qImg.'" alt="" style="display:'.$checkImg.'" />
                 </div>
                 <div class="card-content">
-
+                <span class="question">
+                '.$qId.'. '.$question.'</span>
                 </div>
                 <div class="card-action">
                 <form action="#">';
