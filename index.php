@@ -49,17 +49,17 @@
                 <div class="row">
                   <div class="input-field col s12">
                     <i class="material-icons prefix">account_circle</i>
-                    <input id="ad" type="text" class="validate" name="ad">
+                    <input id="ad" type="text" class="validate" name="ad" required="">
                     <label for="ad">Ad</label>
                   </div>
                   <div class="input-field col s12">
                     <i style="visibility: hidden;" class="material-icons prefix">account_circle</i>
-                    <input id="Soyad" type="text" class="validate" name="soyad">
+                    <input id="Soyad" type="text" class="validate" name="soyad" required="">
                     <label for="Soyad">Soyad</label>
                   </div>
                   <div class="input-field col s12">
                     <i class="material-icons prefix">phone</i>
-                    <input id="mobileNumber" type="tel" class="validate" pattern="^[0-9]*$" name="tel">
+                    <input id="mobileNumber" type="tel" class="validate" pattern="^[0-9]*$" name="tel" required="">
                     <label for="mobileNumber">Mobil nömrə</label>
                   </div>
                 </div>
