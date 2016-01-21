@@ -1,34 +1,25 @@
-<?php include 'db.php'; ?>
 <!DOCTYPE html>
 <html>
 
 <head>
+  <meta charset="utf-8">
+  <title>Giriş</title>
 
   <!-- source links -->
 
-    <?php
-      include 'view/links.php';
-    ?>
+  <?php
+        include 'view/links.php';
+  ?>
 
-  <!-- source links end -->
+    <!-- source links end -->
 
 
 </head>
 
 <body>
-
   <!-- whole container -->
 
   <div class="container-fluid">
-
-    <div class="sidebar hoverable">
-
-    netice
-
-    </div>
-
-
-
     <!-- header -->
 
     <?php
@@ -83,63 +74,65 @@
          ?>
 
 
+      <!-- main content div -->
 
-    <div class="submitDiv">
+      <div class="inputContent">
 
-      <button onclick="showAnswers()" class="submitButton z-depth-1 col m5 red btn waves-effect waves-light" type="submit" name="action">Nəticə
-        <i class="material-icons right">send</i>
-      </button>
+          <div class="enteranceHead">
 
-      <script type="text/javascript">
-        var sidebar = document.getElementsByClassName('sidebar')[0];
-        sidebar.style.transform = 'translateX(105%)';
+            <h3>Xoş Gəlmisiniz!</h3>
 
-        function showAnswers() {
-
-          if (sidebar.style.transform == 'translateX(105%)') {
-            sidebar.style.transition = '0.5s all ease';
-
-            sidebar.style.transform = 'translateX(0%)';
-            console.log(sidebar.style.transform)
-          } else {
-            console.log(sidebar.style.transform)
-
-            sidebar.style.transform = 'translateX(105%)';
-            console.log(sidebar.style.transform)
+          </div>
 
 
-          }
+          <div class="inputBox card hoverable">
+            <div class="row">
+              <form class="col s12" action="exam.php" method="post">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="ad" type="text" class="validate" name="ad" required="">
+                    <label for="ad">Ad</label>
+                  </div>
+                  <div class="input-field col s12">
+                    <i style="visibility: hidden;" class="material-icons prefix">account_circle</i>
+                    <input id="Soyad" type="text" class="validate" name="soyad" required="">
+                    <label for="Soyad">Soyad</label>
+                  </div>
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">phone</i>
+                    <input id="mobileNumber" type="tel" class="validate" pattern="^[0-9]*$" name="tel" required="">
+                    <label for="mobileNumber">Mobil nömrə</label>
+                  </div>
+                </div>
 
-
-        }
-      </script>
-
-
+                <button class="red btn waves-effect waves-light" type="submit" name="action">Təsdiqlə
+                  <i class="material-icons right">send</i>
+                </button>
+              </form>
+            </div>
+          </div>
 
 
       </div>
+
+      <!-- main content div end -->
+
+
+  </div>
+  <!-- whole container -->
+
+
+
+  </div>
+  <div class="teal enteranceFooter">
+
+    <div class="container">
+      <span>© 2016 Copyright Code Academy</span>
     </div>
-  </div>
-
-
-<!-- footer -->
-
-<?php
-
-  include 'view/footer.php';
-
- ?>
-
-<!-- footer end -->
-
-
-
 
   </div>
-
-<!-- whole container end -->
-
-
+</div>
 </body>
 
 </html>

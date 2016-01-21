@@ -1,6 +1,5 @@
 *{
   margin: 0 auto;
-
 }
 
 html{
@@ -46,10 +45,8 @@ body{
 
 /*main content*/
 .mainContent{
-  margin: 50px 0 30px 0;
   height: auto;
   padding-bottom: 150px;
-
   }
 /*main content end*/
 
@@ -78,7 +75,7 @@ body{
 
 /*question card*/
 .card-image img{
-  /*height: 300px;*/
+  padding: 20px 0px;
 }
 
 
@@ -100,6 +97,20 @@ body{
   color: white;
   position: absolute;
   bottom: 0;
+
 }
 
 /*footer end*/
+.resultTable{
+  margin-top: 20px;
+  padding: 30px;
+
+}
+
+/*Results*/
+.result td{
+  padding: 0;
+}
+.result{
+  
+}

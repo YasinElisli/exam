@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 19 Oca 2016, 12:37:53
+-- Üretim Zamanı: 21 Oca 2016, 09:36:10
 -- Sunucu sürümü: 10.1.9-MariaDB
 -- PHP Sürümü: 5.6.15
 
@@ -224,6 +224,25 @@ CREATE TABLE `student` (
   `reg_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Tablo döküm verisi `student`
+--
+
+INSERT INTO `student` (`id`, `name`, `surname`, `tel`, `result`, `reg_date`) VALUES
+(1, 'Yasin', 'Elisli', '0554626882', 0, '2016-01-19 06:08:07'),
+(2, 'Yasin', 'Elislii', '323123', 0, '2016-01-21 08:57:51'),
+(3, 'Orxan', 'Fermanli', '123456', 3, '2016-01-21 09:00:01'),
+(4, 'dfdsfs', 'fsdf', '123213123', 6, '2016-01-21 09:04:29'),
+(5, 'dfdsfs', 'fsdf', '123213123', 6, '2016-01-21 09:05:18'),
+(6, 'dfdsfs', 'fsdf', '123213123', 6, '2016-01-21 09:06:09'),
+(7, 'dfdsfs', 'fsdf', '123213123', 6, '2016-01-21 09:11:50'),
+(8, 'dfdsfs', 'fsdf', '123213123', 6, '2016-01-21 09:12:12'),
+(9, 'dfdsfs', 'fsdf', '123213123', 6, '2016-01-21 09:12:55'),
+(10, 'dfdss', 'dfsfdf', '23354456546', 0, '2016-01-21 09:13:18'),
+(11, 'test', 'sss', '12345', 24, '2016-01-21 09:26:31'),
+(12, 'test2', 'dsss', '12345', 2, '2016-01-21 09:30:31'),
+(13, 'test2', 'dsss', '12345', 2, '2016-01-21 09:32:33');
+
 -- --------------------------------------------------------
 
 --
@@ -233,8 +252,90 @@ CREATE TABLE `student` (
 CREATE TABLE `students_answer` (
   `id` int(11) NOT NULL,
   `s_id` int(11) NOT NULL,
+  `question_id` int(11) NOT NULL,
   `s_answer` varchar(10) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Tablo döküm verisi `students_answer`
+--
+
+INSERT INTO `students_answer` (`id`, `s_id`, `question_id`, `s_answer`) VALUES
+(1, 11, 1, 'B'),
+(2, 11, 2, 'B'),
+(3, 11, 3, ''),
+(4, 11, 4, 'E'),
+(5, 11, 5, ''),
+(6, 11, 6, 'B'),
+(7, 11, 7, ''),
+(8, 11, 8, ''),
+(9, 11, 9, 'E'),
+(10, 11, 10, ''),
+(11, 11, 11, ''),
+(12, 11, 12, ''),
+(13, 11, 13, 'C'),
+(14, 11, 14, ''),
+(15, 11, 15, 'C'),
+(16, 11, 16, ''),
+(17, 11, 17, ''),
+(18, 11, 18, ''),
+(19, 11, 19, ''),
+(20, 11, 20, 'D'),
+(21, 11, 21, 'C'),
+(22, 11, 22, 'B'),
+(23, 11, 23, 'B'),
+(24, 11, 24, 'A'),
+(25, 11, 25, 'D'),
+(26, 12, 1, ''),
+(27, 12, 2, ''),
+(28, 12, 3, ''),
+(29, 12, 4, ''),
+(30, 12, 5, ''),
+(31, 12, 6, ''),
+(32, 12, 7, ''),
+(33, 12, 8, ''),
+(34, 12, 9, ''),
+(35, 12, 10, ''),
+(36, 12, 11, ''),
+(37, 12, 12, ''),
+(38, 12, 13, ''),
+(39, 12, 14, ''),
+(40, 12, 15, ''),
+(41, 12, 16, ''),
+(42, 12, 17, ''),
+(43, 12, 18, ''),
+(44, 12, 19, ''),
+(45, 12, 20, 'C'),
+(46, 12, 21, 'C'),
+(47, 12, 22, ''),
+(48, 12, 23, ''),
+(49, 12, 24, ''),
+(50, 12, 25, ''),
+(51, 13, 1, ''),
+(52, 13, 2, ''),
+(53, 13, 3, ''),
+(54, 13, 4, ''),
+(55, 13, 5, ''),
+(56, 13, 6, ''),
+(57, 13, 7, ''),
+(58, 13, 8, ''),
+(59, 13, 9, ''),
+(60, 13, 10, ''),
+(61, 13, 11, ''),
+(62, 13, 12, ''),
+(63, 13, 13, ''),
+(64, 13, 14, ''),
+(65, 13, 15, ''),
+(66, 13, 16, ''),
+(67, 13, 17, ''),
+(68, 13, 18, ''),
+(69, 13, 19, ''),
+(70, 13, 20, 'C'),
+(71, 13, 21, 'C'),
+(72, 13, 22, ''),
+(73, 13, 23, ''),
+(74, 13, 24, ''),
+(75, 13, 25, '');
 
 --
 -- Dökümü yapılmış tablolar için indeksler
@@ -264,7 +365,8 @@ ALTER TABLE `student`
 --
 ALTER TABLE `students_answer`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `s_id` (`s_id`);
+  ADD KEY `s_id` (`s_id`),
+  ADD KEY `question_id` (`question_id`);
 
 --
 -- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
@@ -284,12 +386,12 @@ ALTER TABLE `question`
 -- Tablo için AUTO_INCREMENT değeri `student`
 --
 ALTER TABLE `student`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- Tablo için AUTO_INCREMENT değeri `students_answer`
 --
 ALTER TABLE `students_answer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 --
 -- Dökümü yapılmış tablolar için kısıtlamalar
 --
@@ -304,7 +406,8 @@ ALTER TABLE `answer`
 -- Tablo kısıtlamaları `students_answer`
 --
 ALTER TABLE `students_answer`
-  ADD CONSTRAINT `students_answer_ibfk_1` FOREIGN KEY (`s_id`) REFERENCES `student` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `students_answer_ibfk_1` FOREIGN KEY (`s_id`) REFERENCES `student` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `students_answer_ibfk_2` FOREIGN KEY (`question_id`) REFERENCES `question` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
