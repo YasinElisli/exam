@@ -34,7 +34,10 @@
     <?php
       include 'view/header.php';
     ?>
+    <?php
 
+
+     ?>
     <!-- header end -->
 
     <div class="mainContent">
@@ -55,6 +58,7 @@
             $_SESSION['name'] = $stdName;
             $_SESSION['surname'] = $stdSurname;
             $_SESSION['tel'] = $stdTel;
+            echo '<span style="float:right">'.$_SESSION['name']." ".$_SESSION['surname'].'</span>';//Istifadecinin adi soyadi header ucun
             $query=mysqli_query($db_connection,"SELECT * FROM question");
 
             while ($row = mysqli_fetch_assoc($query)) {
