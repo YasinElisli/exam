@@ -21,34 +21,96 @@
 
   <div class="container-fluid">
 
-    <div class="valign-wrapper card sidebar">
 
-      <ol>
+    <div class="valign-wrapper sidebar">
+
+      <ul>
 
       <script type="text/javascript">
 
         for (var i = 1; i <= 25; i++) {
-          document.write("<b><a class='navigationNumber' href='#"+i+"'><li></li></a></b>")
+          document.write("<a class='navigationNumber' href='#"+i+"'><li>"+i+"</li></a>")
         }
+
+        // scroll speed
 
         $('a').click(function(){
             $('html, body').animate({
                 scrollTop: $( $.attr(this, 'href') ).offset().top
-            }, 700);
+            }, 1000);
             return false;
         });
 
+        // scroll speed
+
+        // $('.navigationNumber').click(function(){
+        //       $('li').removeClass('activeNum');
+        //      $(this).find('li').addClass('activeNum');
+        // });
+
+
+
+// scroll active shit goes here but i don't have time for this shit now
+// maybe later baby, maybe later
+
+
+
       </script>
 
-      </ol>
+    </ul>
 
-      <div class="navNextButton">
-        <!-- <img src="img/arrow-left.png" alt="" /> -->
+      <div onclick="slideNav()" class="card navNextButton valign-wrapper">
+
+        <img class="navArrowImg" src="img/arrow-left.png" alt="" />
+
       </div>
+
+
+
+<script type="text/javascript">
+
+
+// slide button
+
+  var sidebar = document.getElementsByClassName('sidebar')[0];
+  sidebar.style.transform = 'translateX(-100%)';
+
+  var navArrowImg = document.getElementsByClassName('navArrowImg')[0];
+
+
+  function slideNav() {
+
+    if (sidebar.style.transform == 'translateX(-100%)') {
+
+      sidebar.style.transform = 'translateX(0%)';
+      navArrowImg.style.transform = 'rotate(360deg)';
+
+    } else {
+
+      sidebar.style.transform = 'translateX(-100%)';
+      navArrowImg.style.transform = 'rotate(180deg)';
+
+
+    }
+  }
+
+  // slide button
+
+
+
+
+
+
+
+
+</script>
+
+
+
 
     </div>
 
-
+  <!-- </div> -->
 
     <!-- header -->
 
@@ -79,12 +141,13 @@
             $_SESSION['name'] = $stdName;
             $_SESSION['surname'] = $stdSurname;
             $_SESSION['tel'] = $stdTel;
-            echo '<span style="float:right">'.$_SESSION['name']." ".$_SESSION['surname'].'</span>';//Istifadecinin adi soyadi header ucun
+            echo '<span class="btn waves-effect waves-light hide-on-small-only userNameSurname" style="float:right">'.$_SESSION['name']." ".$_SESSION['surname'].'</span>';//Istifadecinin adi soyadi header ucun
             $query=mysqli_query($db_connection,"SELECT * FROM question");
 
             while ($row = mysqli_fetch_assoc($query)) {
               $checkImg = "none";
               $qId = $row['id'];
+              $qValue = $row['value'];
               $question = $row['question'];
               $qImg = $row['question_img'];
               if (!empty($qImg)) {
@@ -92,15 +155,21 @@
               }
               $queryAnswer=mysqli_query($db_connection,"SELECT * FROM answer WHERE question_id = '$qId'");
               echo '<div class="row">
-                <div class="col s12 m12">
+                <div style="position:relative" class="col s12 m12">
+
+                <a class="questionPoint hide-on-small-only btn-floating btn-large waves-effect waves-light red">'.$qValue.'</a>
+
                   <div class="hoverable card"  id="'.$qId.'">
+
                     <div class="card-image">
                       <img class="responsive-img" src="'.$qImg.'" alt="" style="display:'.$checkImg.'" />
                     </div>
                     <div class="card-content">
                     <span class="question">
                     '.$qId.'. '.$question.'</span>
+
                     </div>
+
                     <div class="card-action">
                     ';
                     while ($row2 = mysqli_fetch_assoc($queryAnswer)) {
@@ -163,30 +232,6 @@
 
 <!-- whole container end -->
 
-<script type="text/javascript">
-
-  var sidebar = document.getElementsByClassName('sidebar')[0];
-  sidebar.style.transform = 'translateX(0%)';
-
-  function showAnswers() {
-
-    if (sidebar.style.transform == 'translateX(-105%)') {
-      sidebar.style.transition = '0.5s all ease';
-
-      sidebar.style.transform = 'translateX(0%)';
-      console.log(sidebar.style.transform)
-    } else {
-      console.log(sidebar.style.transform)
-
-      sidebar.style.transform = 'translateX(-105%)';
-      console.log(sidebar.style.transform)
-
-
-    }
-
-
-  }
-</script>
 </body>
 
 </html>

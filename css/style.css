@@ -8,47 +8,65 @@ html{
 
 body{
   height:100%;
+  background: #FCFCFC;
 }
 
 /*sidebar*/
 .sidebar{
-  position: fixed;
-  left: 0;
-  height: auto;
   width: 45px;
-  top: 15%;
-  padding: 10px 0;
-  background: white;
+  height: 100vh;
   z-index: 5;
   background: #009688;
-  box-shadow: 3px 0px 5px 0 rgba(0, 0, 0, 0.16);
+  position: fixed;
+  left: 0;
+  color: white;
+  transition: 0.5s all ease;
+}
+
+.sidebar ul{
+  padding: 10px;
+  text-align: center;
+  margin: 0;
+}
+
+.sidebar li{
+  padding: 2px 3px;
+}
+
+.activeNum{
+  background: white;
+  color: #009688;
+}
+.sidebar li:active{
+
 }
 
 .navigationNumber{
-  color: white ;
+  color: white;
+  font-weight: bold;
+  outline: none;
 }
+
 
 .navNextButton{
-  background: orangered;
-  height: 30px;
-  width: auto;
-  color: white;
+  height: 50px;
+  padding: 5px;
+  text-align: center;
+  background: #F44336;
+  border-top-right-radius:5px;
+  border-bottom-right-radius:5px;
+  cursor: pointer;
+  transition: 0.5s all ease;
 }
+
+.userNameSurname{
+  transform: translateY(-140%);
+}
+
 .navNextButton img{
-  height: 100%;
+  transition: 0.5s all ease;
+  width: 15px;
   transform: rotate(180deg);
-
-}
-
-.answerDiscription{
-  padding: 20px 0px 20px 20px;
-  font-weight: bold;
-}
-.answerList ol{
-  padding-right: 20px;
-}
-.answerList li{
-    border-bottom: 1px solid rgba(94, 94, 94, 0.3);;
 }
 
 /*sidebar end*/
@@ -67,15 +85,21 @@ body{
 /*main content end*/
 
 
-/*code academy logo*/
-.codeLogo{
-  height: auto;
-  width: auto;
+.questionPoint{
+  position: absolute;
+  right: -15px;
+  top: 40%;
+  font-weight: bold;
 }
 
-.brand-logo img{
-  transform: translateY(25%);
+/*code academy logo*/
+.codeLogo{
+  height: 64px;
+  width: 200px;
+  float: left;
 }
+
+
 /*code academy logo end*/
 
 
@@ -93,6 +117,7 @@ body{
 /*question card*/
 .card-image img{
   padding: 20px 0px;
+
 }
 
 
