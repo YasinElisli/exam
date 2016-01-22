@@ -8,36 +8,45 @@ html{
 
 body{
   height:100%;
+  background: #FCFCFC;
 }
 
 /*sidebar*/
 .sidebar{
-  position: fixed;
-  left: 0;
-  height: auto;
+  height: 100vh;
   width: 45px;
-  top: 15%;
-  padding: 10px 0;
-  background: white;
+  margin: 0 !important;
   z-index: 5;
   background: #009688;
-  box-shadow: 3px 0px 5px 0 rgba(0, 0, 0, 0.16);
+  position: fixed;
+  left: 0;
+  color: white;
+  transition: 0.5s all ease;
 }
-
 .navigationNumber{
-  color: white ;
+  color: white;
 }
 
 .navNextButton{
-  background: orangered;
-  height: 30px;
-  width: auto;
-  color: white;
+  height: 60px;
+  padding: 5px;
+  font-size: 30px;
+  text-align: center;
+  background: #F44336;
+  border-top-right-radius:5px;
+  border-bottom-right-radius:5px;
+  cursor: pointer;
+  transition: 0.5s all ease;
 }
-.navNextButton img{
-  height: 100%;
-  transform: rotate(180deg);
 
+.userNameSurname{
+  transform: translateY(-140%);
+}
+
+.navNextButton img{
+  transition: 0.5s all ease;
+  width: 20px;
+  transform: rotate(180deg);
 }
 
 .answerDiscription{
@@ -69,13 +78,12 @@ body{
 
 /*code academy logo*/
 .codeLogo{
-  height: auto;
-  width: auto;
+  height: 64px;
+  width: 200px;
+  float: left;
 }
 
-.brand-logo img{
-  transform: translateY(25%);
-}
+
 /*code academy logo end*/
 
 
@@ -93,6 +101,7 @@ body{
 /*question card*/
 .card-image img{
   padding: 20px 0px;
+
 }
 
 

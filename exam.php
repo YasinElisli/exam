@@ -21,6 +21,9 @@
 
   <div class="container-fluid">
 
+    <!-- <div class="valign-wrapper valign sideBarWrapper"> -->
+
+
     <div class="valign-wrapper card sidebar">
 
       <ol>
@@ -31,24 +34,74 @@
           document.write("<b><a class='navigationNumber' href='#"+i+"'><li></li></a></b>")
         }
 
+        // scroll speed
+
         $('a').click(function(){
             $('html, body').animate({
                 scrollTop: $( $.attr(this, 'href') ).offset().top
-            }, 700);
+            }, 1000);
             return false;
         });
+
+        // scroll speed
+
 
       </script>
 
       </ol>
 
-      <div class="navNextButton">
-        <!-- <img src="img/arrow-left.png" alt="" /> -->
+      <div onclick="slideNav()" class="card navNextButton valign-wrapper">
+
+        <img class="navArrowImg" src="img/arrow-left.png" alt="" />
+
       </div>
+
+
+
+<script type="text/javascript">
+
+
+// slide button
+
+  var sidebar = document.getElementsByClassName('sidebar')[0];
+  sidebar.style.transform = 'translateX(-100%)';
+
+  var navArrowImg = document.getElementsByClassName('navArrowImg')[0];
+
+
+  function slideNav() {
+
+    if (sidebar.style.transform == 'translateX(-100%)') {
+
+      sidebar.style.transform = 'translateX(0%)';
+      navArrowImg.style.transform = 'rotate(360deg)';
+
+    } else {
+
+      sidebar.style.transform = 'translateX(-100%)';
+      navArrowImg.style.transform = 'rotate(180deg)';
+
+
+    }
+  }
+
+  // slide button
+
+
+
+
+
+
+
+
+</script>
+
+
+
 
     </div>
 
-
+  <!-- </div> -->
 
     <!-- header -->
 
@@ -79,7 +132,7 @@
             $_SESSION['name'] = $stdName;
             $_SESSION['surname'] = $stdSurname;
             $_SESSION['tel'] = $stdTel;
-            echo '<span style="float:right">'.$_SESSION['name']." ".$_SESSION['surname'].'</span>';//Istifadecinin adi soyadi header ucun
+            echo '<span class="btn hide-on-small-only userNameSurname" style="float:right">'.$_SESSION['name']." ".$_SESSION['surname'].'</span>';//Istifadecinin adi soyadi header ucun
             $query=mysqli_query($db_connection,"SELECT * FROM question");
 
             while ($row = mysqli_fetch_assoc($query)) {
@@ -163,30 +216,6 @@
 
 <!-- whole container end -->
 
-<script type="text/javascript">
-
-  var sidebar = document.getElementsByClassName('sidebar')[0];
-  sidebar.style.transform = 'translateX(0%)';
-
-  function showAnswers() {
-
-    if (sidebar.style.transform == 'translateX(-105%)') {
-      sidebar.style.transition = '0.5s all ease';
-
-      sidebar.style.transform = 'translateX(0%)';
-      console.log(sidebar.style.transform)
-    } else {
-      console.log(sidebar.style.transform)
-
-      sidebar.style.transform = 'translateX(-105%)';
-      console.log(sidebar.style.transform)
-
-
-    }
-
-
-  }
-</script>
 </body>
 
 </html>

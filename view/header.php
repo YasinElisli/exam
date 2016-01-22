@@ -4,13 +4,13 @@
   <nav>
     <div class="teal nav-wrapper">
       <div class="container">
-        <div class="codeLogo ">
-          <a href="index.php" class="brand-logo">
-            <img src="img/logo.png" alt="" class="" />
-          </a>
+        <a href="index.php" class="">
+
+        <div class="codeLogo valign-wrapper">
+            <img src="img/logo.png" alt=""/>
         </div>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-        </ul>
+      </a>
+
       </div>
     </div>
   </nav>
