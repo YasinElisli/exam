@@ -21,17 +21,15 @@
 
   <div class="container-fluid">
 
-    <!-- <div class="valign-wrapper valign sideBarWrapper"> -->
 
+    <div class="valign-wrapper sidebar">
 
-    <div class="valign-wrapper card sidebar">
-
-      <ol>
+      <ul>
 
       <script type="text/javascript">
 
         for (var i = 1; i <= 25; i++) {
-          document.write("<b><a class='navigationNumber' href='#"+i+"'><li></li></a></b>")
+          document.write("<a class='navigationNumber' href='#"+i+"'><li>"+i+"</li></a>")
         }
 
         // scroll speed
@@ -45,10 +43,21 @@
 
         // scroll speed
 
+        // $('.navigationNumber').click(function(){
+        //       $('li').removeClass('activeNum');
+        //      $(this).find('li').addClass('activeNum');
+        // });
+
+
+
+// scroll active shit goes here but i don't have time for this shit now
+// maybe later baby, maybe later
+
+
 
       </script>
 
-      </ol>
+    </ul>
 
       <div onclick="slideNav()" class="card navNextButton valign-wrapper">
 
@@ -132,12 +141,13 @@
             $_SESSION['name'] = $stdName;
             $_SESSION['surname'] = $stdSurname;
             $_SESSION['tel'] = $stdTel;
-            echo '<span class="btn hide-on-small-only userNameSurname" style="float:right">'.$_SESSION['name']." ".$_SESSION['surname'].'</span>';//Istifadecinin adi soyadi header ucun
+            echo '<span class="btn waves-effect waves-light hide-on-small-only userNameSurname" style="float:right">'.$_SESSION['name']." ".$_SESSION['surname'].'</span>';//Istifadecinin adi soyadi header ucun
             $query=mysqli_query($db_connection,"SELECT * FROM question");
 
             while ($row = mysqli_fetch_assoc($query)) {
               $checkImg = "none";
               $qId = $row['id'];
+              $qValue = $row['value'];
               $question = $row['question'];
               $qImg = $row['question_img'];
               if (!empty($qImg)) {
@@ -145,15 +155,21 @@
               }
               $queryAnswer=mysqli_query($db_connection,"SELECT * FROM answer WHERE question_id = '$qId'");
               echo '<div class="row">
-                <div class="col s12 m12">
+                <div style="position:relative" class="col s12 m12">
+
+                <a class="questionPoint hide-on-small-only btn-floating btn-large waves-effect waves-light red">'.$qValue.'</a>
+
                   <div class="hoverable card"  id="'.$qId.'">
+
                     <div class="card-image">
                       <img class="responsive-img" src="'.$qImg.'" alt="" style="display:'.$checkImg.'" />
                     </div>
                     <div class="card-content">
                     <span class="question">
                     '.$qId.'. '.$question.'</span>
+
                     </div>
+
                     <div class="card-action">
                     ';
                     while ($row2 = mysqli_fetch_assoc($queryAnswer)) {
