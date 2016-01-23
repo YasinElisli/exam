@@ -11,8 +11,8 @@
           <div class="contributors col l4 offset-l2 s12">
             <h5 class="white-text">Hazırladı:</h5>
             <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">back-end | Yasin Əlişli</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">front-end | Orxan Fərmanlı</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://github.com/YasinElisli">back-end | Yasin Əlişli</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://github.com/orkhanfarmanli">front-end | Orxan Fərmanlı</a></li>
             </ul>
           </div>
         </div>

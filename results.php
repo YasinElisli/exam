@@ -37,7 +37,7 @@
         $userName =  $_SESSION['name'];
         $userSurname = $_SESSION['surname'];
         $userTel = $_SESSION['tel'];
-        echo '<ol class="highlight result">';
+        echo '<ol class="highlight result" style="float:left">';
         while ($row = mysqli_fetch_assoc($query)) {
           $trueAns = $row['answer'];
           $varValue = $row['value'];
@@ -66,6 +66,10 @@
             $stdnAnswers[] = $_POST["$qID"];
           }
           echo " ".$truFalse. " " .$trueAns."</li>";
+          if ($qID%10 == 0) {
+            echo "</ol>";
+            echo '<ol class="result" style="float:left" start='.($qID+1).'">';
+          }
         }
         echo "</ol>";
             echo '<br />'."Netice : ".$result." bal".'<br />';
@@ -87,7 +91,7 @@
     else {
       header("location:index.php");
     }
-    session_unset();
+   session_unset();
 ?>
           </div>
         </div>
