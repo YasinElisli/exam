@@ -8,8 +8,8 @@
   <!-- source links -->
 
   <?php
-        include 'view/links.php';
-      ?>
+      include 'view/links.php';
+  ?>
 
     <!-- source links end -->
 
