@@ -1,0 +1,28 @@
+/*Results */
+
+.resultContent{
+  /*margin: 5% 0 0 0;*/
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.resultTable{
+  margin: 20px 0;
+  padding: 30px;
+  position: relative;
+}
+
+ol li{
+  padding: 10px;
+}
+
+.resultText{
+position: absolute;
+bottom: 0;
+right: 0;
+padding: 30px;
+}
+
+
+
+/*Results end*/

@@ -1,0 +1,30 @@
+.adminPanel{
+  width: 20%;
+  height: 100vh;
+  float: left;
+  padding: 10px 0;
+  margin: 0 !important;
+}
+.controlButtonWrapper{
+  margin: 0 !important;
+}
+.controlButtonWrapper button{
+  width: 100%;
+  height: auto;
+  text-align: left;
+  color: white;
+  padding: 10px 10px;
+  font-size: 17px;
+}
+.panelContent{
+  width: 80%;
+  height: 100vh;
+  float: right;
+}
+.panelText{
+  text-align: center;
+}
+
+.userTable td:hover{
+  cursor: pointer;
+}
