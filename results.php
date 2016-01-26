@@ -11,7 +11,7 @@
     ?>
 
   <!-- source links end -->
-  
+
 </head>
 
 <body>
@@ -79,7 +79,7 @@
           echo " ".$truFalse. " " .$trueAns."</li>";
           if ($qID%10 == 0) {
             echo "</ol>";
-            echo '<ol class="result" style="float:left" start=".($qID+1).">';
+            echo '<ol class="result" style="float:left" start="'.($qID+1).'">';
           }
         }
         echo "</ol>";

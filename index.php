@@ -58,7 +58,7 @@
                   </div>
                   <div class="input-field col s12">
                     <i class="material-icons prefix">phone</i>
-                    <input id="mobileNumber" type="number" class="validate" pattern="^[0-9]*$" name="tel" required="">
+                    <input id="mobileNumber" type="tel" class="validate" pattern="^[0-9]*$" name="tel" required="">
                     <label for="mobileNumber">Mobil nömrə</label>
                   </div>
                 </div>
