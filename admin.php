@@ -13,79 +13,76 @@
 
     <!-- source links end -->
 
+</head>
 
-    <!-- admin panel sidebar -->
+<body style="overflow-y:scroll">
+  <!-- admin panel sidebar -->
 
-    <div class="adminPanel teal">
+  <div class="adminPanel teal">
 
-      <div class="controlButtonWrapper">
+    <div class="controlButtonWrapper">
 
-        <button class="waves-effect waves-teal btn-flat userTableButton" type="button" name="button">Users</button>
-        <button class="waves-effect waves-teal btn-flat questionButton" type="button" name="button">Questions</button>
-        <button class="waves-effect waves-teal btn-flat otherStuffButton" type="button" name="button">Other shit</button>
-
-      </div>
-
+      <button class="waves-effect waves-teal btn-flat userTableButton" type="button" name="button">Users</button>
+      <button class="waves-effect waves-teal btn-flat questionButton" type="button" name="button">Questions</button>
+      <button class="waves-effect waves-teal btn-flat otherStuffButton" type="button" name="button">Other shit</button>
 
     </div>
 
-    <!-- admin panel sidebar end -->
+
+  </div>
+
+  <!-- admin panel sidebar end -->
 
 
+
+  <!-- admin panel content part -->
+
+  <div class="panelContent card">
+
+    <div class="panelText">
+      <h2>Xoş gəlmisiniz, buyrun keçin baş tərəfə.</h2>
+    </div>
 
     <!-- admin panel content part -->
 
-    <div class="panelContent card">
 
-      <div class="panelText">
-        <h2>Xoş gəlmisiniz, buyrun keçin baş tərəfə.</h2>
-      </div>
+    <!-- ajax functions which include different php files -->
 
-      <!-- admin panel content part -->
-
-
-      <!-- ajax functions which include different php files -->
-
-      <script type="text/javascript">
-        $('.userTableButton').click(function() {
-          $.ajax({
-            url: 'adminPanel/users.php',
-            success: function(html) {
-              $(".panelText").html(html);
-            }
-          });
+    <script type="text/javascript">
+      $('.userTableButton').click(function() {
+        $.ajax({
+          url: 'adminPanel/users.php',
+          success: function(html) {
+            $(".panelText").html(html);
+          }
         });
+      });
 
-        $('.questionButton').click(function() {
-          $.ajax({
-            url: 'adminPanel/questions.php',
-            success: function(html) {
-              $(".panelText").html(html);
-            }
-          });
+      $('.questionButton').click(function() {
+        $.ajax({
+          url: 'adminPanel/questions.php',
+          success: function(html) {
+            $(".panelText").html(html);
+          }
         });
+      });
 
 
 
-        $('.otherStuffButton').click(function() {
-          $.ajax({
-            url: 'adminPanel/others.php',
-            success: function(html) {
-              $(".panelText").html(html);
-            }
-          });
+      $('.otherStuffButton').click(function() {
+        $.ajax({
+          url: 'adminPanel/others.php',
+          success: function(html) {
+            $(".panelText").html(html);
+          }
         });
-      </script>
+      });
+    </script>
 
-      <!-- ajax functions which include different php files end -->
+    <!-- ajax functions which include different php files end -->
 
 
-    </div>
-
-</head>
-
-<body>
-
+  </div>
 </body>
 
 </html>
