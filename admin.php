@@ -77,7 +77,7 @@
         });
       </script>
 
-      <!-- ajax functions which include different php files -->
+      <!-- ajax functions which include different php files end -->
 
 
     </div>
