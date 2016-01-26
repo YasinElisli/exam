@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
+  <meta charset="utf-8">
   <title>Nəticə</title>
-  <?php include 'view/links.php'; ?>
 
+  <!-- source links -->
+
+    <?php
+      include 'view/links.php';
+    ?>
+
+  <!-- source links end -->
+  
 </head>
 
 <body>
@@ -17,9 +23,14 @@
     include 'db.php';
     include 'view/header.php';
 ?>
+
+<div class="container">
+
+<h4>Nəticə</h4>
+
+
       <div class="resultContent">
 
-        <div class="container">
 
           <div class="resultTable card large hoverable">
 
@@ -68,14 +79,17 @@
           echo " ".$truFalse. " " .$trueAns."</li>";
           if ($qID%10 == 0) {
             echo "</ol>";
-            echo '<ol class="result" style="float:left" start='.($qID+1).'">';
+            echo '<ol class="result" style="float:left" start=".($qID+1).">';
           }
         }
         echo "</ol>";
-            echo '<br />'."Netice : ".$result." bal".'<br />';
-            echo "Doğru cavabların sayı ".$trueNum.'<br />';
-            echo "Yanliş cavabların sayı ".$falseNum.'<br />';
-            echo "Cavablandırılmamış ".$emptyAns;
+
+        echo "<div class='resultText'>";
+            echo '<br />'."Nəticə : ".$result." bal".'<br />';
+            echo "Doğru cavabların sayı: ".$trueNum.'<br />';
+            echo "Yanlış cavabların sayı: ".$falseNum.'<br />';
+            echo "Cavablandırılmamış: ".$emptyAns;
+        echo "</div>";
             $today = date("Y-m-d  H:i:s");
             $query=mysqli_query($db_connection,"INSERT INTO student(name,surname,tel,result,reg_date) VALUES('$userName','$userSurname','$userTel','$result','$today')");
             $query=mysqli_query($db_connection,"SELECT id FROM student WHERE name = '$userName'");
@@ -104,6 +118,9 @@
         </div>
 
       </div>
+
+
+
   </div>
 
 </body>

@@ -1,5 +1,6 @@
 *{
   margin: 0 auto;
+  outline: none;
 }
 
 html{
@@ -9,6 +10,10 @@ html{
 body{
   height:100%;
   background: #FCFCFC;
+}
+
+h1, h2, h3, h4, h5, h6{
+  color: #444;
 }
 
 /*sidebar*/
@@ -74,7 +79,6 @@ body{
 .container-fluid{
   min-height:100%;
   position:relative;
-
 }
 
 /*main content*/
@@ -139,22 +143,8 @@ body{
   color: white;
   position: absolute;
   bottom: 0;
-
-}
-
-.page-footer{
-
+  margin-top: 20px
 }
 
 
 /*footer end*/
-.resultTable{
-  margin-top: 20px;
-  padding: 30px;
-}
-
-/*Results*/
-.result td{
-  padding: 0;
-}
-.result{}

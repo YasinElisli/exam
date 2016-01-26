@@ -1,0 +1,80 @@
+/*fixed admin panel*/
+
+.adminPanel{
+  width: 12%;
+  height: 100vh;
+  float: left;
+  padding: 10px 0;
+  margin: 0 !important;
+  position: fixed;
+}
+
+
+/*panel buttons*/
+
+.controlButtonWrapper{
+  margin: 0 !important;
+}
+
+.controlButtonWrapper button{
+  width: 100%;
+  height: auto;
+  text-align: left;
+  color: white;
+  padding: 10px;
+  font-size: 17px;
+}
+
+/*panel buttons end*/
+
+
+/*fixed admin panel end*/
+
+
+/*contents in the rest of page*/
+
+.panelContent{
+  width: 88%;
+  height: 100vh;
+  float: right;
+  margin: 0;
+}
+.panelText{
+  text-align: center;
+  padding: 10px;
+}
+
+.userTable td:hover{
+  cursor: pointer;
+}
+
+.questionTable td input{
+  text-align: center;
+}
+
+.uploadQuestionPicture{
+  margin: 0;
+}
+
+..uploadQuestionPicture .file-path-wrapper input{
+  display: none;
+}
+
+.uploadQuestionPicture .input-field{
+  margin: 0;
+}
+
+.uploadQuestionPicture .input-field .btn{
+  padding: 0 10px;
+}
+
+.userId, .questionId{
+ font-weight:bold;
+}
+.questionId{
+  width:50px;
+
+}
+
+
+/*contents in the rest of page*/
