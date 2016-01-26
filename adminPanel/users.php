@@ -1,3 +1,7 @@
+<?php
+include '../db.php';
+
+ ?>
 <table class="userTable responsive-table centered highlight">
         <thead>
           <tr>
@@ -9,23 +13,19 @@
         </thead>
 
         <tbody>
-          <tr>
-            <td class="userId" >1</td>
-            <td>Malik</td>
-            <td>Müstəqilov</td>
-            <td>35</td>
-          </tr>
-          <tr>
-            <td class="userId" >2</td>
-            <td>Əfqan</td>
-            <td>Şakirov</td>
-            <td>26</td>
-          </tr>
-          <tr>
-            <td class="userId" >3</td>
-            <td>Məzahir</td>
-            <td>Mulkədarov</td>
-            <td>15</td>
-          </tr>
+          <?php
+          $connection = mysqli_select_db($db_connection,$dbname);
+          $query=mysqli_query($db_connection,"SELECT * FROM student");
+          while($row = mysqli_fetch_assoc($query)){
+            echo '<tr>
+                <td class="userId" >'.$row['id'].'</td>
+                <td>'.$row['name'].'</td>
+                <td>'.$row['surname'].'</td>
+                <td>'.$row['result'].'</td>
+              </tr>';
+          }
+           ?>
+
+
         </tbody>
       </table>

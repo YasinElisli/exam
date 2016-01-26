@@ -51,7 +51,15 @@
           </tr>
           <tr>
             <td class="questionId"><input type="text" name="questionId" value="2"></td>
-            <td><input type="text" name="name" value="Arifin yaşı qardaşının yaşından 3 dəfə çoxdur.5 il sonra isə onun yaşı qardaşının yaşından iki dəfə çox olacaqdır.Arifin və qardaşının hazırda ikisinin birgə neçə yaşı var?"></td>
+            <td>
+              <!-- <input type="text" name="name" value="Arifin yaşı qardaşının yaşından 3 dəfə çoxdur.5 il sonra isə onun yaşı qardaşının yaşından iki dəfə çox olacaqdır.Arifin və qardaşının hazırda ikisinin birgə neçə yaşı var?"> -->
+              <div class="input-field">
+                  <textarea id="textarea1" class="materialize-textarea">
+                    Zakir
+                  </textarea>
+                  <label for="textarea1">Textarea</label>
+                </div>
+            </td>
             <td class="uploadQuestionPicture" >
             <form action="#">
                <div class="file-field input-field">
