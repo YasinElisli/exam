@@ -16,7 +16,7 @@
 
     <!-- admin panel sidebar -->
 
-    <div class="adminPanel teal card">
+    <div class="adminPanel teal">
 
       <div class="controlButtonWrapper">
 
@@ -35,7 +35,7 @@
 
     <!-- admin panel content part -->
 
-    <div class="panelContent">
+    <div class="panelContent card">
 
       <div class="panelText">
         <h2>Xoş gəlmisiniz, buyrun keçin baş tərəfə.</h2>
